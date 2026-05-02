@@ -32,8 +32,12 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/andre/source/repos/blazor-andrewrobilliard/andrewrobilliard/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/andre/source/repos/blazor-andrewrobilliard/andrewrobilliard/Pages/AboutMe.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXRNZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/source/repos/blazor-andrewrobilliard/andrewrobilliard/Pages/Contact.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/andre/source/repos/blazor-andrewrobilliard/andrewrobilliard/Pages/Home.razor]
@@ -42,10 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/andre/source/repos/blazor-andrewrobilliard/andrewrobilliard/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90Rm91bmQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/andre/source/repos/blazor-andrewrobilliard/andrewrobilliard/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/andre/source/repos/blazor-andrewrobilliard/andrewrobilliard/_Imports.razor]
