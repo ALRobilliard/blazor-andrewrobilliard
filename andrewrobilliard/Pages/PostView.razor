@@ -1,0 +1,51 @@
+@page "/post/{PostName}"
+@inject HttpClient Http
+@inject IMarkdownService MarkdownService
+
+<div class="blog-container">
+  @if (_articleHtml == null)
+  {
+    <p><em>Loading article...</em></p>
+  }
+  else
+  {
+    <article class="prose lg:prose-xl">
+      <h1 class="mb-0">@_title</h1>
+      <p class="text-sm text-gray-500 mb-4">@_date.ToLongDateString()</p>
+      <hr />
+      @_articleHtml
+    </article>
+  }
+</div>
+
+@code {
+  [Parameter] public string PostName { get; set; } = string.Empty;
+  private MarkupString? _articleHtml;
+  private string _title = string.Empty;
+  private DateTime _date;
+
+  protected override async Task OnParametersSetAsync()
+  {
+    try
+    {
+      var markdown = await Http.GetStringAsync($"content/{PostName}.md");
+      var postMetadata = new PostParser().Parse(markdown);
+      
+      if (postMetadata == null)
+      {
+        _articleHtml = new MarkupString("<p>Post not found.</p>");
+        return;
+      }
+
+      _articleHtml = MarkdownService.ConvertToHtml(postMetadata.Content);
+
+      // Parse metadata
+      _title = postMetadata.Metadata.Title;
+      _date = postMetadata.Metadata.Date;
+    }
+    catch (Exception ex)
+    {
+      _articleHtml = new MarkupString($"<p>Error loading post: {ex.Message}</p>");
+    }
+  }
+}
