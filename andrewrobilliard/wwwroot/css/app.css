@@ -5,12 +5,17 @@
     --textTitle: #051118;
     --textLink: #ff4f00;
     --hr: hsla(0, 0%, 0%, 0.2);
+    --maxwidth: 1050px;
 }
 
 html,
 body {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #f0f0f0;
+}
+
+main {
+    margin-top: 5rem;
 }
 
 h1:focus {
@@ -161,6 +166,16 @@ mark {
     padding: 0.2rem;
 }
 
+article {
+    max-width: var(--maxwidth);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+article img {
+    max-width: 100%;
+}
+
 article h1 {
     font-weight: 900;
     padding-bottom: 0.75rem;
@@ -169,4 +184,32 @@ article h1 {
 article h2 {
     padding-bottom: 0.75rem;
     box-shadow: inset 0 -0.175em #f0f0f0, inset 0 -0.2em rgba(0, 0, 0, 0.4);
+}
+
+.post-type {
+    margin-left: 0.5rem;
+    color: var(--textLink);
+}
+
+.post-card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-card>p {
+    margin-top: 1rem;
+}
+
+.navbar {
+    max-width: var(--maxwidth);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-brand {
+    font-family: 'Lobster', cursive;
+    font-size: 1.5rem;
+    color: var(--textLink);
 }

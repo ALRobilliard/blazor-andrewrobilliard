@@ -19,12 +19,12 @@
 }
 else
 {
-  <div class="post-list">
+  <div class="post-list mt-5">
     @foreach (var post in _posts)
     {
       <div class="post-card">
         <h3>@post.TitleIcon<a href="/post/@post.Slug">@post.Title</a></h3>
-        <span class="date">@post.Date.ToLongDateString()</span>
+        <span class="date">@post.Date.ToLongDateString()</span><span class="post-type">// @post.PostType</span>
         <p>@post.Description</p>
       </div>
     }

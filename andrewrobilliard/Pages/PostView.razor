@@ -13,7 +13,8 @@
   {
     <article class="prose lg:prose-xl">
       <h1 class="mb-0">@_titleIcon @_title</h1>
-      <p class="text-sm text-gray-500 mb-4">@_date.ToLongDateString()</p>
+      <span class="text-sm text-gray-500 mb-4">@_date.ToLongDateString()</span><span class="post-type">//
+      @_postType</span>
       <hr />
       @_articleHtml
     </article>
@@ -26,7 +27,7 @@
   private string _title = string.Empty;
   private string _titleIcon = string.Empty;
   private DateTime _date;
-
+  private string _postType = "blog";
   protected override async Task OnParametersSetAsync()
   {
     try
@@ -46,6 +47,7 @@
       _title = postMetadata.Metadata.Title;
       _titleIcon = postMetadata.Metadata.TitleIcon;
       _date = postMetadata.Metadata.Date;
+      _postType = postMetadata.Metadata.PostType;
     }
     catch (Exception ex)
     {
