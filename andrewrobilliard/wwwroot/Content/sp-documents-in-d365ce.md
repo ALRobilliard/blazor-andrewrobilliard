@@ -1,5 +1,6 @@
 ---
-title: "📄 Displaying SharePoint Documents in a D365 CE Form"
+title: Displaying SharePoint Documents in a D365 CE Form
+titleIcon: 📄
 date: "2020-11-17"
 type: "blog"
 ---
@@ -19,7 +20,7 @@ Before starting, it is important to note that this only works on D365 CE online 
 I also assume that you have already set up Sharepoint Document management for the entity in question.
 
 1. Navigate to https://make.powerapps.com, and open the entity form that you want to add documents to.
-2. Add a subgrid of 'related records' only, pointing at entity type 'Documents (Regarding)'
+2. Add a subgrid of 'related records' only, pointing at entity type 'Documents (Regarding)'<br/>
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/y1tl8oeugte7enyp7fcd.png)
 
 - Important note: this subgrid can only be added using the **new** form editor. The 'Documents' entity will not be available in the legacy version.

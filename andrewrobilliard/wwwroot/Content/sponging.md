@@ -1,5 +1,6 @@
 ---
 title: Sponging
+titleIcon: 🧽
 date: "2018-11-17"
 type: "blog"
 ---

@@ -1,5 +1,6 @@
 ---
 title: About Me
+titleIcon: 👨‍💻
 date: "2017-06-06"
 type: "blog"
 ---

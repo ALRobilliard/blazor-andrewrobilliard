@@ -1,5 +1,6 @@
 ---
 title: Deploying .NET Core to Heroku
+titleIcon: 🚀
 date: "2020-08-31"
 type: "blog"
 ---

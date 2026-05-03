@@ -1,5 +1,6 @@
 ---
 title: Week 1 - Wellington and Makahika
+titleIcon: 👔
 date: "2018-01-28"
 type: "blog"
 ---
