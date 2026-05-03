@@ -1,6 +1,9 @@
+namespace Shared.Models;
+
 public record PostMetadata
 {
   public string Title { get; init; } = string.Empty;
+  public string TitleIcon { get; init; } = string.Empty;
   public DateTime Date { get; init; }
   public List<string> Tags { get; init; } = new();
   public string Description { get; init; } = string.Empty;

@@ -1,6 +1,8 @@
 using Markdig;
 using Microsoft.AspNetCore.Components;
 
+namespace andrewrobilliard.Services;
+
 public interface IMarkdownService
 {
   MarkupString ConvertToHtml(string markdown);

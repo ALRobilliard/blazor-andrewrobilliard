@@ -1,5 +1,8 @@
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using Shared.Models;
+
+namespace andrewrobilliard.Helpers;
 
 public class PostParser
 {

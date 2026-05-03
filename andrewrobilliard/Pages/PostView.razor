@@ -1,6 +1,8 @@
-@page "/post/{PostName}"
+@page "/post/{PostName}/"
 @inject HttpClient Http
 @inject IMarkdownService MarkdownService
+
+<PageTitle>@_title | Andrew Robilliard</PageTitle>
 
 <div class="blog-container">
   @if (_articleHtml == null)
@@ -10,7 +12,7 @@
   else
   {
     <article class="prose lg:prose-xl">
-      <h1 class="mb-0">@_title</h1>
+      <h1 class="mb-0">@_titleIcon @_title</h1>
       <p class="text-sm text-gray-500 mb-4">@_date.ToLongDateString()</p>
       <hr />
       @_articleHtml
@@ -22,6 +24,7 @@
   [Parameter] public string PostName { get; set; } = string.Empty;
   private MarkupString? _articleHtml;
   private string _title = string.Empty;
+  private string _titleIcon = string.Empty;
   private DateTime _date;
 
   protected override async Task OnParametersSetAsync()
@@ -41,6 +44,7 @@
 
       // Parse metadata
       _title = postMetadata.Metadata.Title;
+      _titleIcon = postMetadata.Metadata.TitleIcon;
       _date = postMetadata.Metadata.Date;
     }
     catch (Exception ex)
