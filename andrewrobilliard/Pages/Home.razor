@@ -3,15 +3,26 @@
 
 <PageTitle>Home | Andrew Robilliard</PageTitle>
 
-<h1>Hey, I'm Andrew 👋</h1>
+<div class="container mb-5">
+  <div class="row">
+    <h1>Hey, I'm Andrew 👋</h1>
+    <div class="col-8 align-self-center lh-lg">
 
-<p>I'm Andrew Robilliard, a software developer working primarily within the Microsoft ecosystem.</p>
+      <p>I'm Andrew Robilliard, a software developer working primarily within the Microsoft ecosystem.</p>
 
-<p>These days, my time is filled with <mark>Microsoft Dataverse</mark> and the <mark>Microsoft Power Platform</mark>. I
-  frequently write code
-  using
-  <mark>C#</mark>, <mark>JavaScript/TypeScript</mark>, and <mark>SQL</mark>.
-</p>
+      <p>These days, my time is filled with <mark>Microsoft Dataverse</mark> and the <mark>Microsoft Power
+        Platform</mark>.
+        I
+        frequently write code
+        using
+        <mark>C#</mark>, <mark>JavaScript/TypeScript</mark>, and <mark>SQL</mark>.
+      </p>
+    </div>
+    <div class="col-4 align-self-center">
+      <img src="images/profile.jpg" alt="Profile picture of Andrew" class="img-fluid rounded-circle">
+    </div>
+  </div>
+</div>
 
 @if (_posts == null)
 {
@@ -19,7 +30,7 @@
 }
 else
 {
-  <div class="post-list mt-5">
+  <div class="post-list">
     @foreach (var post in _posts)
     {
       <div class="post-card">

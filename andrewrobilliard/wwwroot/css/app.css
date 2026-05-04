@@ -42,11 +42,13 @@ a,
 }
 
 a:hover,
-.btn-link:hover {
+.btn-link:hover,
+.navbar-brand:hover {
     opacity: 0.8;
     -webkit-transition: opacity 0.2s;
     /* safari */
     transition: opacity 0.2s;
+    color: var(--textLink);
 }
 
 .btn-primary {
