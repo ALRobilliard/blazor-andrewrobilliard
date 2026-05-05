@@ -2,7 +2,7 @@
 title: Split Wallet
 titleIcon: 💵
 date: "2019-04-03"
-type: Project
+type: "project"
 projectIcons:
   - name: docker
     cssClass: devicon-docker-plain-wordmark colored

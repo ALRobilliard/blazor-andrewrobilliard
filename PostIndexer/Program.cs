@@ -27,7 +27,7 @@ var posts = Directory.GetFiles(contentPath, "*.md", SearchOption.AllDirectories)
             Path.GetFileNameWithoutExtension(file),
             meta.Date,
             description,
-            meta.PostType
+            meta.Type
         );
     })
     .OrderByDescending(p => p.Date)

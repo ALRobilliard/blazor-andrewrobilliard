@@ -65,7 +65,7 @@ a:hover,
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-.content {
+article.content {
     padding-top: 1.1rem;
 }
 
@@ -214,4 +214,30 @@ article h2 {
     font-family: 'Lobster', cursive;
     font-size: 1.5rem;
     color: var(--textLink);
+}
+
+.footer-container {
+    max-width: var(--maxwidth);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: var(--altBg);
+    color: white;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: white;
 }

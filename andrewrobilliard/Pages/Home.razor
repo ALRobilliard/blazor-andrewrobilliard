@@ -6,7 +6,7 @@
 <div class="container mb-5">
   <div class="row">
     <h1>Hey, I'm Andrew 👋</h1>
-    <div class="col-8 align-self-center lh-lg">
+    <div class="col-8 align-self-center">
 
       <p>I'm Andrew Robilliard, a software developer working primarily within the Microsoft ecosystem.</p>
 
@@ -17,34 +17,34 @@
         using
         <mark>C#</mark>, <mark>JavaScript/TypeScript</mark>, and <mark>SQL</mark>.
       </p>
-    </div>
-    <div class="col-4 align-self-center">
-      <img src="images/profile.jpg" alt="Profile picture of Andrew" class="img-fluid rounded-circle">
-    </div>
-  </div>
-</div>
 
-@if (_posts == null)
-{
-  <p>Loading posts...</p>
-}
-else
-{
-  <div class="post-list">
-    @foreach (var post in _posts)
-    {
-      <div class="post-card">
-        <h3>@post.TitleIcon<a href="/post/@post.Slug">@post.Title</a></h3>
-        <span class="date">@post.Date.ToLongDateString()</span><span class="post-type">// @post.PostType</span>
-        <p>@post.Description</p>
+      <p>Sometimes, I tweet about my thoughts, my side-projects, or anything else that's on my mind. <a
+        href="https://bsky.app/profile/andrewrobilliard.bsky.social" target="_blank">Maybe you should follow me on
+        Bluesky?</a></p>
       </div>
-    }
+      <div class="col-4 align-self-center">
+        <img src="images/profile.jpg" alt="Profile picture of Andrew" class="img-fluid rounded-circle">
+      </div>
+    </div>
   </div>
-}
 
-<p>Sometimes, I tweet about my thoughts, my side-projects, or anything else that's on my mind. <a
-href="https://bsky.app/profile/andrewrobilliard.bsky.social" target="_blank">Maybe you should follow me on
-Bluesky?</a></p>
+  @if (_posts == null)
+  {
+    <p>Loading posts...</p>
+  }
+  else
+  {
+    <div class="post-list">
+      @foreach (var post in _posts)
+      {
+        <div class="post-card">
+          <h3>@post.TitleIcon<a href="/post/@post.Slug">@post.Title</a></h3>
+          <span class="date">@post.Date.ToLongDateString()</span><span class="post-type">// @post.Type</span>
+          <p>@post.Description</p>
+        </div>
+      }
+    </div>
+  }
 
 @code {
   private List<PostSummary>? _posts;

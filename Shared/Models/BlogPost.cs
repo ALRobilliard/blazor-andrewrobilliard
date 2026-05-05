@@ -7,7 +7,7 @@ public record PostMetadata
   public DateTime Date { get; init; }
   public List<string> Tags { get; init; } = new();
   public string Description { get; init; } = string.Empty;
-  public string PostType { get; init; } = "blog";
+  public string Type { get; init; } = "blog";
   public List<ProjectIcon> ProjectIcons { get; init; } = new();
   public string ProjectLink { get; init; } = string.Empty;
 }
