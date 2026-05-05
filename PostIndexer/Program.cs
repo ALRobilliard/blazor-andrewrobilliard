@@ -3,8 +3,21 @@ using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 using Shared.Models;
 
-var contentPath = "../andrewrobilliard/wwwroot/content";
-var outputPath = "../andrewrobilliard/wwwroot/posts.json";
+// Use the first argument if provided, otherwise fallback to current directory
+string projectRoot = args.Length > 0 ? args[0] : Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName, "andrewrobilliard");
+
+// Clean up the path (removes trailing slashes/quotes)
+projectRoot = Path.GetFullPath(projectRoot);
+
+var contentPath = Path.Combine(projectRoot, "wwwroot", "content");
+var outputPath = Path.Combine(projectRoot, "wwwroot", "posts.json");
+
+Console.WriteLine($"Scanning content at: {contentPath}");
+
+if (!Directory.Exists(contentPath))
+{
+    throw new DirectoryNotFoundException($"Critical Error: Could not find content directory at {contentPath}.");
+}
 
 var deserializer = new DeserializerBuilder()
     .WithNamingConvention(CamelCaseNamingConvention.Instance)
@@ -16,7 +29,6 @@ var posts = Directory.GetFiles(contentPath, "*.md", SearchOption.AllDirectories)
     {
         var content = File.ReadAllText(file);
         var yamlSection = content.Split("---", 3)[1];
-        Console.WriteLine(file);
         var meta = deserializer.Deserialize<PostMetadata>(yamlSection);
         var contentWithoutYaml = content.Split("---", 3)[2].Trim();
         var description = string.IsNullOrEmpty(meta.Description) ? contentWithoutYaml.Substring(0, Math.Min(147, contentWithoutYaml.Length)) + "..." : meta.Description;
@@ -34,3 +46,4 @@ var posts = Directory.GetFiles(contentPath, "*.md", SearchOption.AllDirectories)
     .ToList();
 
 File.WriteAllText(outputPath, JsonSerializer.Serialize(posts));
+Console.WriteLine($"Post index generated with {posts.Count} posts at: {outputPath}");
