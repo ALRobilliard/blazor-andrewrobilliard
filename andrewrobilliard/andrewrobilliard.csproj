@@ -19,7 +19,8 @@
   </ItemGroup>
 
   <Target Name="GeneratePostIndex" BeforeTargets="Build">
-    <Exec Command="dotnet run --project ../PostIndexer/PostIndexer.csproj" />
+      <Exec Command="dotnet run --project ../PostIndexer/PostIndexer.csproj -- $(ProjectDir)"
+            WorkingDirectory="$(MSBuildProjectDirectory)" />
   </Target>
 
 </Project>
